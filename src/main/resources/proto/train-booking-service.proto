@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package sec01;
+
+option java_package = "com.irctc";
+option java_multiple_files = true;
+
+message Passenger{
+	string name = 1;
+	int32 age = 2;
+}
+
+message BookingRequest{
+	int32 trainId = 1;
+	repeated Passenger passenger = 2;
+}
+
+message BookingResponse{
+	int32 pnr = 1;
+}
+
+service TrainBookingService{
+	rpc BookTrain(BookingRequest) returns (BookingResponse);
+}

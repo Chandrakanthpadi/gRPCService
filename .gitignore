@@ -1,0 +1,29 @@
+# Compiled Java classes
+*.class
+
+# Logs
+*.log
+logs/
+*.out
+
+# Maven & Gradle build directories
+target/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VSCode
+.vscode/
+
+# gRPC & Protobuf generated files
+src/main/generated/
+
+
+# Eclipse-specific files
+.classpath
+.project
+.settings/
