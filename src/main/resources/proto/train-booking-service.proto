@@ -5,6 +5,8 @@ package sec01;
 option java_package = "com.irctc";
 option java_multiple_files = true;
 
+import "google/protobuf/timestamp.proto";
+
 message Passenger{
 	string name = 1;
 	int32 age = 2;
@@ -13,10 +15,17 @@ message Passenger{
 message BookingRequest{
 	int32 trainId = 1;
 	repeated Passenger passenger = 2;
+	google.protobuf.Timestamp created = 3;
 }
 
 message BookingResponse{
 	int32 pnr = 1;
+	TransferStatus status = 2;
+}
+
+enum TransferStatus {
+  FAILED = 0;
+  CONFIRMED = 1;
 }
 
 service TrainBookingService{
