@@ -12,10 +12,17 @@ message Passenger{
 	int32 age = 2;
 }
 
+message Date{
+	string year = 1;
+	string month = 2;
+	string day = 3;
+}
+
 message BookingRequest{
 	int32 trainId = 1;
 	repeated Passenger passenger = 2;
 	google.protobuf.Timestamp created = 3;
+	Date travelDate = 4;
 }
 
 message BookingResponse{
